@@ -1,0 +1,12 @@
+Credits:
+1) Launcher + crack - Shifuu
+2) Crack requested by - Rusher
+
+INTRUCTIONS FOR USING:
+I) Run Launch.bat through cmd 
+
+II) Set username
+
+III) If you see microsoft login screen, press escape[esc] key on your keyboard
+
+dm Shifuu#6900 for any issues
