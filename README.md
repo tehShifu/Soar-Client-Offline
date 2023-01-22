@@ -1,6 +1,8 @@
 # Soar-Client-Offline
 Next generation pvp client developed by Eldodebug. Launcher for offline users 
-https://soar-client.github.io/
+
+Dev: https://github.com/Eldodebug
+Client: https://soar-client.github.io/
 
 All instructions in text file.
 
