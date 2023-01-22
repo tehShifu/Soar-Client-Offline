@@ -1,6 +1,8 @@
 Credits:
 1) Launcher + crack - Shifuu
 2) Crack requested by - Rusher
+3) Emotional support - Rusher
+
 
 INTRUCTIONS FOR USING:
 I) Run Launch.bat through cmd 
