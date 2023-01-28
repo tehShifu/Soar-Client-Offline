@@ -28,44 +28,63 @@ echo "                Information" | red
 echo "
 1) If you have custom directory for soar, edit soarDir variable
 2) Default launch memory is set to 2G, change it by editing the launch command
+3) Your account must be registered on https://ely.by/ for skins to work
 " | red
 
 $gameDir = "$env:userprofile\APPDATA\Roaming\.soarclient\game"
 $soarDir = (Resolve-Path "$env:userprofile\APPDATA\Roaming\.soarclient")
 $javaJre = (Resolve-Path "$soarDir\jre")[0]
-echo "
 
-Current path to Soar = $soarDir
-
-"
-$gdirQ = Read-Host -Prompt "Do you want use a custom game directory? [y/n]: "
+$gdirQ = Read-Host -Prompt "Do you want use a custom game directory? [y/n] "
 if ($gdirQ -eq 'y') { 
   $gameDir = Read-Host -Prompt "Insert path to minecraft folder"
   if (Test-Path -Path "$gameDir\soar") {
-    echo "Soar folder exists already, proceeding."
+    echo "Soar folder exists already, proceeding.
+    "
   }else {
-    echo "
-    Please wait while we set up your custom directory...
+    echo "Please wait while we set up your custom directory...
     "
     Copy-Item -Path "$soarDir\game\soar" -Destination "$gameDir" -Recurse -PassThru -Force | Out-Null
     Copy-Item -Path "$soarDir\game\options.txt" -Destination "$gameDir" -Recurse -PassThru -Force | Out-Null
     Copy-Item -Path "$soarDir\game\optionsof.txt" -Destination "$gameDir" -Recurse -PassThru -Force | Out-Null
     Copy-Item -Path "$soarDir\game\usercache.json" -Destination "$gameDir" -Recurse -PassThru -Force | Out-Null
 
-    echo "
-    Game directory set to $gameDir
+    echo "Game directory set to $gameDir
     "
     }
 }else {
   $gameDir = "$soarDir\game"
-  echo "Using default soar game directory"
+  echo "Using default soar game directory
+  "
+}
+ 
+$skinQ = Read-Host -Prompt "Do you want use skins? (Only Ely.by and Mojang supporte) [y/n] "
+if ($skinQ -eq 'y') { 
+  if (-Not (Test-Path "$soarDir\libraries\authlib-1.5.21.jar")) {
+    echo "Downloading lib for Skin support
+    "
+    Invoke-WebRequest -Uri "https://github.com/tehShifu/Soar-Client-Offline/releases/download/Libraries/authlib-1.5.21.jar" -OutFile "$soarDir\libraries\authlib-1.5.21.jar"
+    echo "Downloaded libs
+    "
+    $playerName = Read-Host -Prompt "Your username [must match Ely.by account] "
+    $skinStatus = "Enabled"
+  }else {
+    echo "Skin libs already downloaded.
+    "
+    $skinStatus = "Enabled"
+    $playerName = Read-Host -Prompt "Your username [must match Ely.by account] "
+    }
+}else {
+  echo "Proceeding without skin support"
+  $playerName = Read-Host -Prompt "Your username "
+  $skinStatus = "Disabled"
 } 
 
-$playerName = Read-Host -Prompt "Username you wanna play with"
 
 echo "
 
 Username: $playerName
+Skin Support: $skinStatus
 Game directory: $gameDir
 
 Launching Soar Client 1.8.9...
