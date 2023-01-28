@@ -18,7 +18,7 @@ All instructions in text file.
 
 <h2 align="center">How to use Skins</h2>
 
-• Register account at https://ely.by/\
+• Register account at https://ely.by/ \
 • Upload or choose your skin.\
 • Run launcher and enable skin support.\
 • Match launch username with ely.by account
