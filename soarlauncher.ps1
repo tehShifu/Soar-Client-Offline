@@ -1,4 +1,4 @@
-$host.UI.RawUI.WindowTitle = "Soar Client Cracked"
+﻿$host.UI.RawUI.WindowTitle = "Soar Client Cracked"
 
 function green {
     process {Write-Host $_ -ForegroundColor Green }
@@ -12,15 +12,14 @@ function red {
 echo 
 "
 
-
- ______     ______     ______     ______    
-/\  ___\   /\  __ \   /\  __ \   /\  == \   
-\ \___  \  \ \ \/\ \  \ \  __ \  \ \  __<   
- \/\_____\  \ \_____\  \ \_\ \_\  \ \_\ \_\ 
-  \/_____/   \/_____/   \/_/\/_/   \/_/ /_/ 
-                                            
-                                                    
-           Launcher by Shifuu#6900                                   
+        ███████╗ ██████╗  █████╗ ██████╗ 
+        ██╔════╝██╔═══██╗██╔══██╗██╔══██╗
+        ███████╗██║   ██║███████║██████╔╝
+        ╚════██║██║   ██║██╔══██║██╔══██╗
+        ███████║╚██████╔╝██║  ██║██║  ██║
+        ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+                                                                                             
+            Launcher by Shifuu#6900                                   
 
 " | green
 
@@ -31,9 +30,16 @@ echo "
 3) Your account must be registered on https://ely.by/ for skins to work
 " | red
 
-$gameDir = "$env:userprofile\APPDATA\Roaming\.soarclient\game"
-$soarDir = (Resolve-Path "$env:userprofile\APPDATA\Roaming\.soarclient")
-$javaJre = (Resolve-Path "$soarDir\jre")[0]
+# Fix AppData roaming
+if (Test-Path -Path "$env:APPDATA\Roaming") {
+    # if %AppData% does not auto open Roaming
+    $soarDir = (Resolve-Path "$env:APPDATA\Roaming\.soarclient")
+}else{
+    # if %AppData% opens Roaming
+    $soarDir = (Resolve-Path "$env:APPDATA\.soarclient")    
+}
+
+$javaJre = (Resolve-Path "$soarDir\jre")
 
 $gdirQ = Read-Host -Prompt "Do you want use a custom game directory? [y/n] "
 if ($gdirQ -eq 'y') { 
