@@ -7,7 +7,7 @@ All instructions in text file.
 <h2 align="center">Launcher</h2>
 
 <p align="center">
-  <img width="479" height="308" src="https://i.imgur.com/XssbvOK.png">
+  <img width="395" height="178" src="https://i.imgur.com/W6tYKdF.png">
 </p>
 
 <h4 align="center">Screenshot</h4>
@@ -29,7 +29,7 @@ All instructions in text file.
 </p>
 
 <p align="center">
-  <img width="480" height="370" src="https://i.imgur.com/KrlDUdd.png">
+  <img width="637" height="537" src="https://i.imgur.com/RufQo7Z.png">
 </p>
 
 <p align="center">
