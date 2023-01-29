@@ -50,6 +50,7 @@ if ($gdirQ -eq 'y') {
   }else {
     echo "Please wait while we set up your custom directory...
     "
+    # OUT-NULL stops printing copy verbose
     Copy-Item -Path "$soarDir\game\soar" -Destination "$gameDir" -Recurse -PassThru -Force | Out-Null
     Copy-Item -Path "$soarDir\game\options.txt" -Destination "$gameDir" -Recurse -PassThru -Force | Out-Null
     Copy-Item -Path "$soarDir\game\optionsof.txt" -Destination "$gameDir" -Recurse -PassThru -Force | Out-Null
