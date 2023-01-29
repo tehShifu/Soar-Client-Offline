@@ -1,4 +1,4 @@
-﻿$host.UI.RawUI.WindowTitle = "Soar Client Cracked"
+﻿$host.UI.RawUI.WindowTitle = "Soar Offline [DO NOT CLOSE CMD]"
 
 function green {
     process {Write-Host $_ -ForegroundColor Green }
