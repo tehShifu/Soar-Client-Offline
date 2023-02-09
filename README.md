@@ -1,6 +1,6 @@
 # Soar-Client-Offline
 
-   Account login was patched, I still know another way to use soar on cracked Im just too lazy to update rn, if you do want it tho dm me Shifuu#6900
+   Account login was patched for later versions, this downloads soar v6.0.1.
    
  Launcher for cracked users. Skin support included.
 
